@@ -96,10 +96,6 @@ jobs:
             image: alpine:3.20
             setup: apk add --no-cache curl sudo bash
 
-          - distro: Alpine 3.19
-            image: alpine:3.19
-            setup: apk add --no-cache curl sudo bash
-
     steps:
       - uses: actions/checkout@v4
 
