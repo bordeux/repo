@@ -141,6 +141,13 @@ install_arch() {
         exit 1
     fi
 
+    # Import GPG key
+    print_info "Importing GPG key..."
+    $SUDO pacman-key --init 2>/dev/null || true
+    curl -fsSL "${ARCH_REPO_URL}/keys/${REPO_NAME}.gpg" -o /tmp/${REPO_NAME}.gpg 2>/dev/null && \
+        $SUDO pacman-key --add /tmp/${REPO_NAME}.gpg 2>/dev/null && \
+        rm -f /tmp/${REPO_NAME}.gpg || print_warning "GPG key import skipped (may not be signed)"
+
     pacman_conf="/etc/pacman.conf"
 
     # Check if repository is already added
