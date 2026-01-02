@@ -97,10 +97,10 @@ jobs:
             setup: apk add --no-cache curl sudo bash
 
     steps:
-      - uses: actions/checkout@v4
-
       - name: Setup dependencies
         run: ${{ matrix.setup }}
+
+      - uses: actions/checkout@v4
 
       - name: Run install script
         run: |
