@@ -231,7 +231,7 @@ install_redhat() {
 
 main() {
     echo "=========================================="
-    echo "   ${REPO_NAME^} Repository Installer"
+    echo "   ${REPO_NAME} Repository Installer"
     echo "=========================================="
     echo
 
