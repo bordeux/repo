@@ -54,6 +54,10 @@ jobs:
             setup: apt-get update && apt-get install -y curl sudo gpg
 
           # RedHat-based
+          - distro: Fedora latest
+            image: fedora:latest
+            setup: dnf install -y curl sudo
+
           - distro: Fedora 40
             image: fedora:40
             setup: dnf install -y curl sudo
@@ -68,6 +72,10 @@ jobs:
 
           - distro: AlmaLinux 9
             image: almalinux:9
+            setup: dnf install -y curl sudo
+
+          - distro: Amazon Linux latest
+            image: amazonlinux:latest
             setup: dnf install -y curl sudo
 
           - distro: Amazon Linux 2023
