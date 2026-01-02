@@ -7,13 +7,13 @@ Universal installer script for adding Bordeux package repositories across multip
 **Install repository only:**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/bordeux/repo/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/bordeux/repo/master/install.sh | sh
 ```
 
 **Install repository and a package:**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/bordeux/repo/master/install.sh | bash -s -- tmpltool
+curl -fsSL https://raw.githubusercontent.com/bordeux/repo/master/install.sh | sh -s -- tmpltool
 ```
 
 ## Supported Operating Systems
