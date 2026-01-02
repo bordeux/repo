@@ -92,8 +92,8 @@ jobs:
             image: alpine:latest
             setup: apk add --no-cache curl sudo bash
 
-          - distro: Alpine 3.22
-            image: alpine:3.22
+          - distro: Alpine 3.23
+            image: alpine:3.23
             setup: apk add --no-cache curl sudo bash
 
     steps:
