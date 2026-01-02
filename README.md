@@ -37,58 +37,6 @@ curl -fsSL https://raw.githubusercontent.com/bordeux/repo/master/install.sh | ba
 | (none) | Installs only the repository |
 | `app_name` | Installs the repository and the specified application |
 
-## Examples
-
-### macOS
-
-```bash
-# Add tap only
-./install.sh
-
-# Add tap and install tmpltool
-./install.sh tmpltool
-```
-
-### Debian/Ubuntu
-
-```bash
-# Add repository only
-sudo ./install.sh
-
-# Add repository and install tmpltool
-sudo ./install.sh tmpltool
-```
-
-### Arch Linux
-
-```bash
-# Add repository only
-sudo ./install.sh
-
-# Add repository and install tmpltool
-sudo ./install.sh tmpltool
-```
-
-### Alpine Linux
-
-```bash
-# Add repository only
-sudo ./install.sh
-
-# Add repository and install tmpltool
-sudo ./install.sh tmpltool
-```
-
-### Fedora/RHEL/CentOS
-
-```bash
-# Add repository only
-sudo ./install.sh
-
-# Add repository and install tmpltool
-sudo ./install.sh tmpltool
-```
-
 ## What the Script Does
 
 ### macOS (Homebrew)
@@ -123,12 +71,6 @@ sudo ./install.sh tmpltool
 1. Downloads the `.repo` file to `/etc/yum.repos.d/`
 2. Imports the GPG key
 3. Optionally installs the specified package
-
-## Available Packages
-
-| Package | Description |
-|---------|-------------|
-| `tmpltool` | Fast template renderer supporting many datasources and functions |
 
 ## Repository Sources
 
