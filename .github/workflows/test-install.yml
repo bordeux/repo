@@ -1,0 +1,91 @@
+name: Test Install Script
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  test-macos:
+    name: macOS (Homebrew)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run install script
+        run: ./install.sh tmpltool
+
+      - name: Verify installation
+        run: tmpltool --version
+
+  test-linux:
+    name: ${{ matrix.distro }}
+    runs-on: ubuntu-latest
+    container: ${{ matrix.image }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Debian-based
+          - distro: Debian 12
+            image: debian:12
+            setup: apt-get update && apt-get install -y curl sudo gpg
+
+          - distro: Debian 11
+            image: debian:11
+            setup: apt-get update && apt-get install -y curl sudo gpg
+
+          - distro: Ubuntu 24.04
+            image: ubuntu:24.04
+            setup: apt-get update && apt-get install -y curl sudo gpg
+
+          - distro: Ubuntu 22.04
+            image: ubuntu:22.04
+            setup: apt-get update && apt-get install -y curl sudo gpg
+
+          # RedHat-based
+          - distro: Fedora 40
+            image: fedora:40
+            setup: dnf install -y curl sudo
+
+          - distro: Fedora 39
+            image: fedora:39
+            setup: dnf install -y curl sudo
+
+          - distro: Rocky Linux 9
+            image: rockylinux:9
+            setup: dnf install -y curl sudo
+
+          - distro: AlmaLinux 9
+            image: almalinux:9
+            setup: dnf install -y curl sudo
+
+          # Arch-based
+          - distro: Arch Linux
+            image: archlinux:latest
+            setup: pacman -Sy --noconfirm curl sudo
+
+          # Alpine
+          - distro: Alpine 3.20
+            image: alpine:3.20
+            setup: apk add --no-cache curl sudo bash
+
+          - distro: Alpine 3.19
+            image: alpine:3.19
+            setup: apk add --no-cache curl sudo bash
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup dependencies
+        run: ${{ matrix.setup }}
+
+      - name: Run install script
+        run: |
+          chmod +x ./install.sh
+          ./install.sh tmpltool
+
+      - name: Verify installation
+        run: tmpltool --version
