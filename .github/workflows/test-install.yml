@@ -74,6 +74,14 @@ jobs:
             image: almalinux:9
             setup: dnf install -y curl sudo --allowerasing
 
+          - distro: RHEL 9 (UBI)
+            image: registry.access.redhat.com/ubi9/ubi:latest
+            setup: dnf install -y curl sudo --allowerasing
+
+          - distro: RHEL 8 (UBI)
+            image: registry.access.redhat.com/ubi8/ubi:latest
+            setup: dnf install -y curl sudo --allowerasing
+
           - distro: Amazon Linux latest
             image: amazonlinux:latest
             setup: dnf install -y sudo tar gzip
