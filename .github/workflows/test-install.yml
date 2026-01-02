@@ -62,6 +62,14 @@ jobs:
             image: almalinux:9
             setup: dnf install -y curl sudo
 
+          - distro: Amazon Linux 2023
+            image: amazonlinux:2023
+            setup: dnf install -y curl sudo
+
+          - distro: Amazon Linux 2
+            image: amazonlinux:2
+            setup: yum install -y curl sudo
+
           # Arch-based
           - distro: Arch Linux
             image: archlinux:latest
