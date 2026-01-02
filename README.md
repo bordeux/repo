@@ -1,5 +1,7 @@
 # Bordeux Repository Installer
 
+[![Test Install Script](https://github.com/bordeux/repo/actions/workflows/test-install.yml/badge.svg)](https://github.com/bordeux/repo/actions/workflows/test-install.yml)
+
 Universal installer script for adding Bordeux package repositories across multiple operating systems.
 
 ## Quick Start
