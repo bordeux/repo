@@ -76,11 +76,11 @@ jobs:
 
           - distro: Amazon Linux latest
             image: amazonlinux:latest
-            setup: dnf install -y curl sudo tar gzip
+            setup: dnf install -y sudo tar gzip
 
           - distro: Amazon Linux 2023
             image: amazonlinux:2023
-            setup: dnf install -y curl sudo tar gzip
+            setup: dnf install -y sudo tar gzip
 
           # Arch-based
           - distro: Arch Linux
