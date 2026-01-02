@@ -68,11 +68,11 @@ jobs:
 
           - distro: Rocky Linux 9
             image: rockylinux:9
-            setup: dnf install -y curl sudo
+            setup: dnf install -y curl sudo --allowerasing
 
           - distro: AlmaLinux 9
             image: almalinux:9
-            setup: dnf install -y curl sudo
+            setup: dnf install -y curl sudo --allowerasing
 
           - distro: Amazon Linux latest
             image: amazonlinux:latest
